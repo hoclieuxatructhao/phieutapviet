@@ -339,7 +339,7 @@
             white-space: pre;
             overflow: hidden;
             margin: 0 !important;
-            padding: 0.5mm !important;
+            padding: 0 !important;
             letter-spacing: 0;
           }
 
@@ -394,7 +394,7 @@
             right: 10mm;
             z-index: 2;
             text-align: center;
-            font-size: 8pt;
+            font-size: 8.5pt;
             color: #475569;
           }
 
@@ -863,11 +863,10 @@ Ngày đầu tiên đi học. Mẹ dắt tay đến trường.</textarea
           : 10;
 
         // 1. Định vị Lớp Ô li Nền và Thân bài viết
-        const GRID_EDGE_INSET_MM = 0.35;
-        const topPos = `${pageMargin + GRID_EDGE_INSET_MM}mm`;
-        const leftPos = `${pageMargin + GRID_EDGE_INSET_MM}mm`;
-        const widthVal = `calc(210mm - ${(pageMargin + GRID_EDGE_INSET_MM) * 2}mm)`;
-        const heightVal = `calc(297mm - ${(pageMargin + GRID_EDGE_INSET_MM) * 2}mm)`;
+        const topPos = `${pageMargin}mm`;
+        const leftPos = `${pageMargin}mm`;
+        const widthVal = `calc(210mm - ${pageMargin * 2}mm)`;
+        const heightVal = `calc(297mm - ${pageMargin * 2}mm)`;
 
         if (gridBackground) {
           gridBackground.style.top = topPos;
