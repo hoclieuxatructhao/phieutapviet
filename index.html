@@ -329,6 +329,14 @@
             margin: 0;
             overflow: hidden !important;
           }
+          .margin-frame {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            box-sizing: border-box;
+            border: 0.2mm solid rgba(0, 0, 0, 0.25);
+            background: transparent;
+          }
 
           /* LỚP FONT Ô LI NỀN */
           .notebook-bg {
@@ -699,6 +707,7 @@ Ngày đầu tiên đi học. Mẹ dắt tay đến trường.</textarea
           <div class="a4-page" id="a4Page">
             <!-- Thẻ Nền Font Ô Li -->
             <div class="notebook-bg" id="gridBackground"></div>
+            <div class="margin-frame" id="marginFrame"></div>
 
             <header class="page-header">
               <div class="sheet-title" id="displaySheetTitle">
@@ -825,7 +834,7 @@ Ngày đầu tiên đi học. Mẹ dắt tay đến trường.</textarea
         const H_mm = 297 - pageMargin * 2;
 
         const cols = Math.floor(W_mm / config.step);
-        const rows = Math.floor(H_mm / config.rowHeight);
+        const rows = Math.floor(H_mm / config.rowHeight) + 1;
 
         const repeatChar = style === "midline" ? "a" : "b";
         const rowString = repeatChar.repeat(cols);
@@ -867,6 +876,15 @@ Ngày đầu tiên đi học. Mẹ dắt tay đến trường.</textarea
         const leftPos = `${pageMargin}mm`;
         const widthVal = `calc(210mm - ${pageMargin * 2}mm)`;
         const heightVal = `calc(297mm - ${pageMargin * 2}mm)`;
+        const marginFrame = document.getElementById("marginFrame");
+
+        if (marginFrame) {
+          marginFrame.style.top = `${pageMargin}mm`;
+          marginFrame.style.left = `${pageMargin}mm`;
+          marginFrame.style.width = `calc(210mm - ${pageMargin * 2}mm)`;
+          marginFrame.style.height = `calc(297mm - ${pageMargin * 2}mm)`;
+          marginFrame.style.borderColor = gridColor;
+        }
 
         if (gridBackground) {
           gridBackground.style.top = topPos;
