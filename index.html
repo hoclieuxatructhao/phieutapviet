@@ -643,14 +643,14 @@
                   type="color"
                   id="gridColor"
                   class="form-control-color"
-                  value="#cbd5e1"
+                  value="#0066FF"
                 />
                 <input
                   type="text"
                   id="gridColorHex"
                   class="form-control"
                   spellcheck="false"
-                  value="#cbd5e1"
+                  value="#0066FF"
                 />
               </div>
             </div>
@@ -1260,7 +1260,7 @@ Ngày đầu tiên đi học. Mẹ dắt tay đến trường.</textarea
         if (!gridBackground) return;
 
         const config = FONT_GRID_MAP[type] || FONT_GRID_MAP["5li-2.5mm"];
-        const baseColor = colorHex || "#cbd5e1";
+        const baseColor = colorHex || "#0066FF";
 
         const W_mm = 210 - pageMargin * 2;
         const H_mm = 297 - pageMargin * 2;
@@ -1286,7 +1286,7 @@ Ngày đầu tiên đi học. Mẹ dắt tay đến trường.</textarea
         const type = gridTypeEl.value;
         const style = gridStyleEl ? gridStyleEl.value : "normal";
         const pageMargin = parseFloat(pageMarginEl.value) || 20;
-        const gridColor = gridColorEl ? gridColorEl.value : "#cbd5e1";
+        const gridColor = gridColorEl ? gridColorEl.value : "#0066FF";
         const sheetTitle = sheetTitleEl ? sheetTitleEl.value : "";
         const contentTitle = contentTitleEl ? contentTitleEl.value : "";
         const contentText = contentTextEl ? contentTextEl.value : "";
